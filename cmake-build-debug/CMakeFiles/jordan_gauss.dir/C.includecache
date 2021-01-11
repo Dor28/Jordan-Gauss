@@ -6,5 +6,15 @@
 
 #IncludeRegexTransform: 
 
+/home/dor/CLionProjects/jordan-gauss/lss_77_05.h
+stdio.h
+-
+stdlib.h
+-
+time.h
+-
+
 /home/dor/CLionProjects/jordan-gauss/main_lss_77_05.c
+lss_77_05.h
+/home/dor/CLionProjects/jordan-gauss/lss_77_05.h
 
