@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/jordan_gauss.dir/lss_77_05.c.o CMakeFiles/jordan_gauss.dir/main_lss_77_05.c.o  -o jordan_gauss 
