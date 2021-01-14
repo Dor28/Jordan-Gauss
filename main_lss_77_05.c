@@ -71,6 +71,6 @@ int main(int argc, char *argv[]){
     print_system(n, A, B);
     free(A);
     free(B);
-
+      
     return 0;
 };
