@@ -51,6 +51,7 @@ void write_answer(char *output_file, int n, const double *X, int result){
 }
 void print_system(int n, double *A, double *B) {
     int i, j;
+    printf("%d\n", n);
     for (i = 0; i < n; i++) {
         for (j = 0; j < n; j++) {
             printf("%1.9lf ", A[i * n + j]);

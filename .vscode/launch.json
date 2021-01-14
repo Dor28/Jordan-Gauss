@@ -8,8 +8,20 @@
             "name": "(gdb) Launch",
             "type": "cppdbg",
             "request": "launch",
-            "program": "enter program name, for example ${workspaceFolder}/a.out",
-            "args": [],
+            "windows": {
+                "program": "${workspaceFolder}/main_lss_77_05.exe",
+            },
+            "linux": {
+                "program": "${workspaceFolder}/main_lss_77_05",
+            },
+            "args": [
+                "input.txt",
+                "output.txt",
+                "-d",
+                "-e",
+                "-p",
+                "-t"
+            ],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],
@@ -22,6 +34,7 @@
                     "ignoreFailures": true
                 }
             ]
+            "preLaunchTask": "C/C++: gcc build active file",
         }
     ]
 }
