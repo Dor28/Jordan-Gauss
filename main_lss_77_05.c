@@ -51,6 +51,7 @@ void write_answer(char *output_file, int n, const double *X, int result){
 }
 void print_system(int n, double *A, double *B) {
     int i, j;
+    printf("%d\n", n);
     for (i = 0; i < n; i++) {
         for (j = 0; j < n; j++) {
             printf("%1.9lf ", A[i * n + j]);
@@ -63,10 +64,14 @@ void print_system(int n, double *A, double *B) {
 
 int main(int argc, char *argv[]){
     int n =0;
-    double *A, *B;
-    char *input_file = "input.txt";
+    double *A = NULL;
+    double *B = NULL;
+    double *tmp = NULL;
+    double *X = NULL;
+    char *input_file = "../input.txt";
     char *output_file = "output.txt";
     read_input(input_file,&A, &B, &n);
+    lss_75_05( n,  A,  B, X,  tmp);
     print_system(n, A, B);
     free(A);
     free(B);

@@ -1,3 +1,3 @@
-/home/dor/CLionProjects/jordan-gauss/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/dor/CLionProjects/jordan-gauss/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/dor/CLionProjects/jordan-gauss/cmake-build-debug/CMakeFiles/jordan_gauss.dir
+D:/study/programming/Jordan-Gauss/cmake-build-debug/CMakeFiles/jordan_gauss.dir
+D:/study/programming/Jordan-Gauss/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/study/programming/Jordan-Gauss/cmake-build-debug/CMakeFiles/rebuild_cache.dir

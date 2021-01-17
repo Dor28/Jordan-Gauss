@@ -6,7 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/dor/CLionProjects/jordan-gauss/lss_77_05.h
+D:/study/programming/Jordan-Gauss/lss_77_05.c
+lss_77_05.h
+D:/study/programming/Jordan-Gauss/lss_77_05.h
+
+D:/study/programming/Jordan-Gauss/lss_77_05.h
 stdio.h
 -
 stdlib.h
@@ -14,7 +18,7 @@ stdlib.h
 time.h
 -
 
-/home/dor/CLionProjects/jordan-gauss/main_lss_77_05.c
+D:/study/programming/Jordan-Gauss/main_lss_77_05.c
 lss_77_05.h
-/home/dor/CLionProjects/jordan-gauss/lss_77_05.h
+D:/study/programming/Jordan-Gauss/lss_77_05.h
 
