@@ -6,16 +6,14 @@
 
 #IncludeRegexTransform: 
 
-D:/study/programming/Jordan-Gauss/lss_77_05.c
-lss_77_05.h
-D:/study/programming/Jordan-Gauss/lss_77_05.h
-
 D:/study/programming/Jordan-Gauss/lss_77_05.h
 stdio.h
 -
 stdlib.h
 -
 time.h
+-
+math.h
 -
 
 D:/study/programming/Jordan-Gauss/main_lss_77_05.c

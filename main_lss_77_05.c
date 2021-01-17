@@ -1,33 +1,33 @@
 #include "lss_77_05.h"
 
-int read_input(char *input_file, double **A, double **B, int *n){
+int read_input(char *input_file, double **A, double **B, int *n) {
     int i, check_input;
     FILE *input = fopen(input_file, "r");
     check_input = fscanf(input, "%d", n);
-    if (check_input == EOF){
+    if (check_input == EOF) {
         return 4;
     }
-    if (check_input ==0 || *n <=0){
+    if (check_input == 0 || *n <= 0) {
         return 1;
     }
-    *A = malloc((*n) * (*n) * sizeof(double ));
-    *B = malloc((*n) * sizeof(double ));
+    *A = malloc((*n) * (*n) * sizeof(double));
+    *B = malloc((*n) * sizeof(double));
 
-    for(i=0;i<(*n)*(*n);i++){
+    for (i = 0; i < (*n) * (*n); i++) {
         check_input = fscanf(input, "%lf", (*A + i));
-        if (check_input==EOF){
+        if (check_input == EOF) {
             return 2;
         }
-        if(check_input==0){
+        if (check_input == 0) {
             return 3;
         }
     }
-    for(i=0; i < (*n); i++){
-        check_input = fscanf(input, "%lf", (*B+i));
-        if (check_input==EOF){
+    for (i = 0; i < (*n); i++) {
+        check_input = fscanf(input, "%lf", (*B + i));
+        if (check_input == EOF) {
             return 5;
         }
-        if(check_input==0){
+        if (check_input == 0) {
             return 3;
         }
     }
@@ -35,20 +35,20 @@ int read_input(char *input_file, double **A, double **B, int *n){
     return 0;
 }
 
-void write_answer(char *output_file, int n, const double *X, int result){
+void write_answer(char *output_file, int n, const double *X, int result) {
     int i;
     FILE *output = fopen(output_file, "w");
-    if(result!=0){
+    if (result != 0) {
         fprintf(output, "%d\n", 0);
-    }
-    else{
+    } else {
         fprintf(output, "%d\n", n);
-        for(i=0; i<n; i++){
-            fprintf(output,"1.9lf\n", *(X+1));
+        for (i = 0; i < n; i++) {
+            fprintf(output, "%1.9lf\n", *(X + i));
         }
     }
     fclose(output);
 }
+
 void print_system(int n, double *A, double *B) {
     int i, j;
     printf("%d\n", n);
@@ -62,16 +62,18 @@ void print_system(int n, double *A, double *B) {
     printf("\n");
 }
 
-int main(int argc, char *argv[]){
-    int n =0;
+int main(int argc, char *argv[]) {
+    int n = 0;
     double *A = NULL;
     double *B = NULL;
     double *tmp = NULL;
-    double *X = NULL;
+
     char *input_file = "../input.txt";
-    char *output_file = "output.txt";
-    read_input(input_file,&A, &B, &n);
-    lss_75_05( n,  A,  B, X,  tmp);
+    char *output_file = "../output.txt";
+    read_input(input_file, &A, &B, &n);
+    double *X = malloc(n * sizeof(double));
+    lss_75_05(n, A, B, X, tmp);
+    write_answer(output_file,n, X, 0);
     print_system(n, A, B);
     free(A);
     free(B);
