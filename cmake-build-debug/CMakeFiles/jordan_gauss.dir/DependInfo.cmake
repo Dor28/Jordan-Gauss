@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "D:/study/programming/Jordan-Gauss/lss_77_05.c" "D:/study/programming/Jordan-Gauss/cmake-build-debug/CMakeFiles/jordan_gauss.dir/lss_77_05.c.obj"
-  "D:/study/programming/Jordan-Gauss/main_lss_77_05.c" "D:/study/programming/Jordan-Gauss/cmake-build-debug/CMakeFiles/jordan_gauss.dir/main_lss_77_05.c.obj"
+  "/home/dor/CLionProjects/Jordan-Gauss/lss_77_05.c" "/home/dor/CLionProjects/Jordan-Gauss/cmake-build-debug/CMakeFiles/jordan_gauss.dir/lss_77_05.c.o"
+  "/home/dor/CLionProjects/Jordan-Gauss/main_lss_77_05.c" "/home/dor/CLionProjects/Jordan-Gauss/cmake-build-debug/CMakeFiles/jordan_gauss.dir/main_lss_77_05.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

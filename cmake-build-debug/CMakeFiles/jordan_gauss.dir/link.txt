@@ -1,3 +1,1 @@
-"D:\applications\CLion 2020.3.1\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\jordan_gauss.dir/objects.a
-D:\applications\mngw\mingw64\bin\ar.exe cr CMakeFiles\jordan_gauss.dir/objects.a @CMakeFiles\jordan_gauss.dir\objects1.rsp
-D:\applications\mngw\mingw64\bin\gcc.exe -g   -Wl,--whole-archive CMakeFiles\jordan_gauss.dir/objects.a -Wl,--no-whole-archive  -o jordan_gauss.exe -Wl,--out-implib,libjordan_gauss.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\jordan_gauss.dir\linklibs.rsp
+/usr/bin/cc -g   CMakeFiles/jordan_gauss.dir/lss_77_05.c.o CMakeFiles/jordan_gauss.dir/main_lss_77_05.c.o  -o jordan_gauss 

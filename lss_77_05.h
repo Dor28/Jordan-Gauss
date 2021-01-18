@@ -11,3 +11,4 @@ void Swap2Rows(int row_1, int row_2, int n, double *Arr, double *B);
 double *MaxElementInColumn(int column, int SearchFrom, int n, double *Arr);
 int ModuleGaussIteration(int i, int j, int n, double *Arr, double *B);
 int FindOutRow(double *value, int n, double *Arr);
+int ReverseGaussIteration(int i, int j, int n, double *Arr, double *B);

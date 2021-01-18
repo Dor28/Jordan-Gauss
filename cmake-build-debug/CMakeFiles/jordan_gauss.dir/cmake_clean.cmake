@@ -1,10 +1,8 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/jordan_gauss.dir/lss_77_05.c.obj"
-  "CMakeFiles/jordan_gauss.dir/main_lss_77_05.c.obj"
-  "jordan_gauss.exe"
-  "jordan_gauss.exe.manifest"
+  "CMakeFiles/jordan_gauss.dir/lss_77_05.c.o"
+  "CMakeFiles/jordan_gauss.dir/main_lss_77_05.c.o"
+  "jordan_gauss"
   "jordan_gauss.pdb"
-  "libjordan_gauss.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.
