@@ -12,3 +12,4 @@ double *MaxElementInColumn(int column, int SearchFrom, int n, double *Arr);
 int ModuleGaussIteration(int i, int j, int n, double *Arr, double *B);
 int FindOutRow(double *value, int n, double *Arr);
 int ReverseGaussIteration(int i, int j, int n, double *Arr, double *B);
+int checkConsistency(int row,  int n, double *Arr, double *B, int flag);
