@@ -1,4 +1,4 @@
 3
 -nan
--nan
--nan
+inf
+inf

@@ -11,9 +11,10 @@ int lss_75_05(int n, double *A, double *B, double *X, double *tmp) {
         Swap2Rows(i,rowOfMaxElement, n , A, B);
         ModuleGaussIteration( i,  i,  n, A,  B);
         flag = checkConsistency(i, n , A , B , flag);
+        printf("%d\n", flag);
 
     }
-    printf("%d\n", flag);
+
     for (int i = n-1; i > -1; i--) {
         ReverseGaussIteration(i, i, n,  A,  B);
     }
@@ -96,6 +97,7 @@ int checkConsistency(int row,  int n, double *Arr, double *B, int flag) {
     for (int i = 0; i < n; ++i) {
         if(*getPointerByIndexes(row,i,n, Arr)>EPSILON){
            flag = 0;
+            return flag;
         }
         else {
             if (fabs(B[row]) < EPSILON) flag = 2; // infinity solutions
