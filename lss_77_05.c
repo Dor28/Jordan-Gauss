@@ -5,18 +5,17 @@ int lss_75_05(int n, double *A, double *B, double *X, double *tmp) {
     double *maxElement;
     int rowOfMaxElement;
     int flag = 0;
-    for (int i = 0; i < n-1; ++i) {
+    for (int i = 0; i < n; ++i) {
+        flag = checkConsistency(i, n, A, B);
         maxElement = MaxElementInColumn(i,i, n, A);
         rowOfMaxElement = FindOutRow(maxElement, n , A);
-        Swap2Rows(i,rowOfMaxElement, n , A, B);
-        ModuleGaussIteration( i,  i,  n, A,  B);
-        flag = checkConsistency(i, n , A , B , flag);
-        printf("%d\n", flag);
+       Swap2Rows(i,rowOfMaxElement, n , A, B);
 
+       ModuleGaussIteration( i,  i,  n, A,  B);
     }
 
-    for (int i = n-1; i > -1; i--) {
-        ReverseGaussIteration(i, i, n,  A,  B);
+    for (int i = n; i > -1; i--) {
+        ReverseGaussIteration(i, i, n, A, B);
     }
 
     X[n-1] = B[n-1] / *getPointerByIndexes(n-1, n-1, n, A);
@@ -25,6 +24,10 @@ int lss_75_05(int n, double *A, double *B, double *X, double *tmp) {
             B[i]-= *getPointerByIndexes(i, j, n, A) * X[j];
         }
         X[i] = B[i] / *getPointerByIndexes(i, i, n, A);
+    }
+    if (flag == 3){
+        printf("\nSystem has no solutions\n");
+        return 1;
     }
     return 0;
 }
@@ -35,7 +38,6 @@ double *getPointerByIndexes(int i, int j, int n, double *Arr) {
 }
 
 void Swap2Rows(int row_1, int row_2, int n, double *Arr, double *B) {
-    double *R_1, *R_2;
     double tmp;
     for (int i = 0; i < n; i++) {
         tmp = *getPointerByIndexes(row_1, i, n, Arr);
@@ -93,16 +95,20 @@ int ReverseGaussIteration(int i, int j, int n, double *Arr, double *B){
     return 0;
 }
 
-int checkConsistency(int row,  int n, double *Arr, double *B, int flag) {
+int checkConsistency(int row,  int n, double *Arr, double *B) {
+    int flag = 0;
     for (int i = 0; i < n; ++i) {
-        if(*getPointerByIndexes(row,i,n, Arr)>EPSILON){
+        if(fabs(*getPointerByIndexes(row,i,n,Arr))>EPSILON){
            flag = 0;
-            return flag;
         }
         else {
-            if (fabs(B[row]) < EPSILON) flag = 2; // infinity solutions
-            else if (fabs(B[row]) > EPSILON) flag = 3; // no solutions
+           flag = 1;
         }
     }
+    if (flag==1){
+       // if (fabs(B[row]) < EPSILON) flag = 2; // infinity solutions
+        if (fabs(B[row]) > EPSILON) flag = 3; // no solutions
+    }
+
     return flag;
 }

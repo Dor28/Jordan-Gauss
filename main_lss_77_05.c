@@ -1,5 +1,80 @@
 #include "lss_77_05.h"
 
+char flag_debug = 0, flag_errors = 0, flag_print_matrix = 0, flag_time = 0, flag_help = 0, max_iter = 0;
+
+
+
+int validateFile(char const *filename) {
+    FILE *f = fopen(filename, "rb");
+    int err = f == NULL;
+
+    if (!err) {
+        fclose(f);
+    }
+
+    return err;
+}
+unsigned int stringLength(char const *input) {
+    int length = 0;
+
+    while (input[length] != '\0') {
+        length++;
+    }
+
+    return length;
+}
+int validateParams(int argc, char **argv) {
+    int i, count = 0;
+
+    if (argc == 1) {
+        return 0;
+    }
+
+    for (i = 1; i < argc; i++) {
+        if (argv[i][0] == '-' && stringLength(argv[i]) == 2) {
+            switch (argv[i][1]) {
+                case 'd': {
+                    flag_debug = 1;
+                    break;
+                }
+                case 'h': {
+                    flag_help = 1;
+                    break;
+                }
+                case '?': {
+                    flag_help = 1;
+                    break;
+                }
+                case 'e': {
+                    flag_errors = 1;
+                    break;
+                }
+                case 'p': {
+                    flag_print_matrix = 1;
+                    break;
+                }
+                case 't': {
+                    flag_time = 1;
+                    break;
+                }
+                default: {
+                    return 1;  // no such flag
+                }
+            }
+        } else if (argv[i][0] == '-') {
+            return 1;  // no such flag
+        } else {
+            count++;
+        }
+    }
+
+    if (count > 2) {
+        return 2;  // too much filenames
+    }
+
+    return 0;
+}
+
 int read_input(char *input_file, double **A, double **B, int *n) {
     int i, check_input;
     FILE *input = fopen(input_file, "r");
@@ -63,6 +138,7 @@ void print_system(int n, double *A, double *B) {
 }
 
 int main(int argc, char *argv[]) {
+    int set_input = 0;
     int n = 0;
     double *A = NULL;
     double *B = NULL;
@@ -70,13 +146,108 @@ int main(int argc, char *argv[]) {
 
     char *input_file = "../input.txt";
     char *output_file = "../output.txt";
-    read_input(input_file, &A, &B, &n);
+    switch (validateParams(argc, argv)) {
+        case 1: {
+            if (flag_errors) {
+                printf("ValidationError: Wrong syntax of parameters. Too much filenames\n");
+            }
+            return 2;
+        }
+        case 2: {
+            if (flag_errors) {
+                printf(
+                        "ValidationError: Wrong syntax of parameters. There is no such parameter or "
+                        "you haven't set value to one of the parameters\n");
+            }
+            return 3;
+        }
+        default: {
+            break;
+        }
+    }
+
+    for (int i = 1; i < argc; i++) {
+        if (argv[i][0] != '-') {
+            if (!set_input) {
+                if (i != 1) {
+                    if (flag_errors) {
+                        printf("ValidationError: Wrong order of parameters.\n");
+                    }
+                    return 4;
+                }
+                input_file = argv[i];
+                if (validateFile(input_file)) {
+                    if (flag_errors) {
+                        printf("ValidationError: There is no such file.\n");
+                    }
+                    return 5;
+                }
+                set_input = 1;
+            } else {
+                if (i != 2) {
+                    if (flag_errors) {
+                        printf("ValidationError: Wrong order of parameters.\n");
+                    }
+                    return 4;
+                }
+                output_file = argv[i];
+            }
+        }
+    }
+
+    if (!set_input) {
+        if (validateFile(input_file)) {
+            if (flag_errors) {
+                printf("ValidationError: There is no such file.\n");
+            }
+            return 5;
+        }
+    }
+
+    switch (read_input(input_file, &A, &B, &n)) {
+        case 1: {
+            if (flag_errors) {
+                printf("ValidationError. File is empty.\n");
+            }
+            return 6;
+        }
+        case 2: {
+            if (flag_errors) {
+                printf("ValidationError. n is not a positive integer.\n");
+            }
+            return 7;
+        }
+        case 3: {
+            if (flag_errors) {
+                printf("ValidationError. Not enough elements in the matrix.\n");
+            }
+            return 8;
+        }
+        case 4: {
+            if (flag_errors) {
+                printf("ValidationError. One of the elements of the matrix or constant terms vector is not a number.\n");
+            }
+            return 9;
+        }
+        default: {
+            break;
+        }
+    }
     double *X = malloc(n * sizeof(double));
-    lss_75_05(n, A, B, X, tmp);
-    write_answer(output_file,n, X, 0);
-    print_system(n, A, B);
+    clock_t begin = clock();
+    int result =  lss_75_05(n, A, B, X, tmp);
+    clock_t  end    = clock();
+    double time_spent = (double )(end-begin)/ CLOCKS_PER_SEC;
+    if (flag_time) {
+        printf("\nExecution time: %1.9lf\n", time_spent);
+    }
+
+    write_answer(output_file,n, X, result);
+    if (flag_print_matrix) {
+        print_system(n, A, B);
+    }
     free(A);
     free(B);
 
-    return 0;
+    return result;
 };
