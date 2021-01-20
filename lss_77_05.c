@@ -10,7 +10,6 @@ int lss_75_05(int n, double *A, double *B, double *X, double *tmp) {
         maxElement = MaxElementInColumn(i,i, n, A);
         rowOfMaxElement = FindOutRow(maxElement, n , A);
        Swap2Rows(i,rowOfMaxElement, n , A, B);
-
        ModuleGaussIteration( i,  i,  n, A,  B);
     }
 
@@ -23,7 +22,11 @@ int lss_75_05(int n, double *A, double *B, double *X, double *tmp) {
         for (int j = i + 1; j < n; ++j) {
             B[i]-= *getPointerByIndexes(i, j, n, A) * X[j];
         }
-        X[i] = B[i] / *getPointerByIndexes(i, i, n, A);
+        if(fabs(*getPointerByIndexes(i,i,n,A))<=EPSILON) X[i]=0;
+        else{
+            X[i] = B[i] / *getPointerByIndexes(i, i, n, A);
+        }
+
     }
     if (flag == 3){
         printf("\nSystem has no solutions\n");

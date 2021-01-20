@@ -136,7 +136,16 @@ void print_system(int n, double *A, double *B) {
     }
     printf("\n");
 }
-
+void printHelp() {
+    printf(
+            "Usage: lss [input_file_name] [output_file_name] [options]\n"
+            "Where options include:\n"
+            " -d                print debug messages [default OFF]\n"
+            " -e                print errors [default OFF]\n"
+            " -p                print matrix [default OFF]\n"
+            " -t                print execution time [default OFF]\n"
+            " -h, -?            print this and exit\n");
+}
 int main(int argc, char *argv[]) {
     int set_input = 0;
     int n = 0;
@@ -144,8 +153,8 @@ int main(int argc, char *argv[]) {
     double *B = NULL;
     double *tmp = NULL;
 
-    char *input_file = "../input.txt";
-    char *output_file = "../output.txt";
+    char *input_file = "lss_77_05_in.txt";
+    char *output_file = "lss_77_05_out.txt";
     switch (validateParams(argc, argv)) {
         case 1: {
             if (flag_errors) {
@@ -232,6 +241,9 @@ int main(int argc, char *argv[]) {
         default: {
             break;
         }
+    }
+    if (flag_print_matrix) {
+        print_system(n, A, B);
     }
     double *X = malloc(n * sizeof(double));
     clock_t begin = clock();
