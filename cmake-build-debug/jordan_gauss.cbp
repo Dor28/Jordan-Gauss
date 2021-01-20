@@ -8,84 +8,82 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/dor/CLionProjects/Jordan-Gauss/cmake-build-debug"/>
+				<Option working_dir="D:/study/programming/Jordan-Gauss/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/dor/CLionProjects/Jordan-Gauss/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/dor/CLionProjects/Jordan-Gauss/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/dor/CLionProjects/Jordan-Gauss/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/dor/CLionProjects/Jordan-Gauss/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="rebuild_cache">
-				<Option working_dir="/home/dor/CLionProjects/Jordan-Gauss/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/dor/CLionProjects/Jordan-Gauss/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/dor/CLionProjects/Jordan-Gauss/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/dor/CLionProjects/Jordan-Gauss/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/dor/CLionProjects/Jordan-Gauss/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="edit_cache">
-				<Option working_dir="/home/dor/CLionProjects/Jordan-Gauss/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/dor/CLionProjects/Jordan-Gauss/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/dor/CLionProjects/Jordan-Gauss/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/dor/CLionProjects/Jordan-Gauss/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/dor/CLionProjects/Jordan-Gauss/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/applications/mngw/mingw64/bin/mingw32-make.exe -f &quot;D:/study/programming/Jordan-Gauss/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="D:/applications/mngw/mingw64/bin/mingw32-make.exe -f &quot;D:/study/programming/Jordan-Gauss/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/applications/mngw/mingw64/bin/mingw32-make.exe -f &quot;D:/study/programming/Jordan-Gauss/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/applications/mngw/mingw64/bin/mingw32-make.exe -f &quot;D:/study/programming/Jordan-Gauss/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="jordan_gauss">
-				<Option output="/home/dor/CLionProjects/Jordan-Gauss/cmake-build-debug/jordan_gauss" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/dor/CLionProjects/Jordan-Gauss/cmake-build-debug"/>
+				<Option output="D:/study/programming/Jordan-Gauss/cmake-build-debug/jordan_gauss.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/study/programming/Jordan-Gauss/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/include-fixed"/>
-					<Add directory="/usr/include"/>
+					<Add directory="D:/applications/mngw/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
+					<Add directory="D:/applications/mngw/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="D:/applications/mngw/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/dor/CLionProjects/Jordan-Gauss/cmake-build-debug/Makefile&quot;  VERBOSE=1 jordan_gauss"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/dor/CLionProjects/Jordan-Gauss/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/dor/CLionProjects/Jordan-Gauss/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/dor/CLionProjects/Jordan-Gauss/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/applications/mngw/mingw64/bin/mingw32-make.exe -f &quot;D:/study/programming/Jordan-Gauss/cmake-build-debug/Makefile&quot;  VERBOSE=1 jordan_gauss"/>
+					<CompileFile command="D:/applications/mngw/mingw64/bin/mingw32-make.exe -f &quot;D:/study/programming/Jordan-Gauss/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/applications/mngw/mingw64/bin/mingw32-make.exe -f &quot;D:/study/programming/Jordan-Gauss/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/applications/mngw/mingw64/bin/mingw32-make.exe -f &quot;D:/study/programming/Jordan-Gauss/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="jordan_gauss/fast">
-				<Option output="/home/dor/CLionProjects/Jordan-Gauss/cmake-build-debug/jordan_gauss" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/dor/CLionProjects/Jordan-Gauss/cmake-build-debug"/>
+				<Option output="D:/study/programming/Jordan-Gauss/cmake-build-debug/jordan_gauss.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/study/programming/Jordan-Gauss/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/include-fixed"/>
-					<Add directory="/usr/include"/>
+					<Add directory="D:/applications/mngw/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
+					<Add directory="D:/applications/mngw/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="D:/applications/mngw/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/dor/CLionProjects/Jordan-Gauss/cmake-build-debug/Makefile&quot;  VERBOSE=1 jordan_gauss/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/dor/CLionProjects/Jordan-Gauss/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/dor/CLionProjects/Jordan-Gauss/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/dor/CLionProjects/Jordan-Gauss/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/applications/mngw/mingw64/bin/mingw32-make.exe -f &quot;D:/study/programming/Jordan-Gauss/cmake-build-debug/Makefile&quot;  VERBOSE=1 jordan_gauss/fast"/>
+					<CompileFile command="D:/applications/mngw/mingw64/bin/mingw32-make.exe -f &quot;D:/study/programming/Jordan-Gauss/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/applications/mngw/mingw64/bin/mingw32-make.exe -f &quot;D:/study/programming/Jordan-Gauss/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/applications/mngw/mingw64/bin/mingw32-make.exe -f &quot;D:/study/programming/Jordan-Gauss/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="D:/study/programming/Jordan-Gauss/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/applications/mngw/mingw64/bin/mingw32-make.exe -f &quot;D:/study/programming/Jordan-Gauss/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="D:/applications/mngw/mingw64/bin/mingw32-make.exe -f &quot;D:/study/programming/Jordan-Gauss/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/applications/mngw/mingw64/bin/mingw32-make.exe -f &quot;D:/study/programming/Jordan-Gauss/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/applications/mngw/mingw64/bin/mingw32-make.exe -f &quot;D:/study/programming/Jordan-Gauss/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="D:/study/programming/Jordan-Gauss/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/applications/mngw/mingw64/bin/mingw32-make.exe -f &quot;D:/study/programming/Jordan-Gauss/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="D:/applications/mngw/mingw64/bin/mingw32-make.exe -f &quot;D:/study/programming/Jordan-Gauss/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/applications/mngw/mingw64/bin/mingw32-make.exe -f &quot;D:/study/programming/Jordan-Gauss/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/applications/mngw/mingw64/bin/mingw32-make.exe -f &quot;D:/study/programming/Jordan-Gauss/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/dor/CLionProjects/Jordan-Gauss/lss_77_05.c">
+		<Unit filename="D:/study/programming/Jordan-Gauss/lss_77_05.c">
 			<Option target="jordan_gauss"/>
 		</Unit>
-		<Unit filename="/home/dor/CLionProjects/Jordan-Gauss/lss_77_05.h">
+		<Unit filename="D:/study/programming/Jordan-Gauss/lss_77_05.h">
 			<Option target="jordan_gauss"/>
 		</Unit>
-		<Unit filename="/home/dor/CLionProjects/Jordan-Gauss/main_lss_77_05.c">
+		<Unit filename="D:/study/programming/Jordan-Gauss/main_lss_77_05.c">
 			<Option target="jordan_gauss"/>
 		</Unit>
-		<Unit filename="/home/dor/CLionProjects/Jordan-Gauss/CMakeLists.txt">
+		<Unit filename="D:/study/programming/Jordan-Gauss/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

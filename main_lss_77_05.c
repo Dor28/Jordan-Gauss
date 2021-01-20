@@ -1,7 +1,9 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <time.h>
 #include "lss_77_05.h"
 
 char flag_debug = 0, flag_errors = 0, flag_print_matrix = 0, flag_time = 0, flag_help = 0, max_iter = 0;
-
 
 
 int validateFile(char const *filename) {
@@ -14,6 +16,7 @@ int validateFile(char const *filename) {
 
     return err;
 }
+
 unsigned int stringLength(char const *input) {
     int length = 0;
 
@@ -23,6 +26,7 @@ unsigned int stringLength(char const *input) {
 
     return length;
 }
+
 int validateParams(int argc, char **argv) {
     int i, count = 0;
 
@@ -136,6 +140,7 @@ void print_system(int n, double *A, double *B) {
     }
     printf("\n");
 }
+
 void printHelp() {
     printf(
             "Usage: lss [input_file_name] [output_file_name] [options]\n"
@@ -146,6 +151,7 @@ void printHelp() {
             " -t                print execution time [default OFF]\n"
             " -h, -?            print this and exit\n");
 }
+
 int main(int argc, char *argv[]) {
     int set_input = 0;
     int n = 0;
@@ -247,14 +253,18 @@ int main(int argc, char *argv[]) {
     }
     double *X = malloc(n * sizeof(double));
     clock_t begin = clock();
-    int result =  lss_75_05(n, A, B, X, tmp);
-    clock_t  end    = clock();
-    double time_spent = (double )(end-begin)/ CLOCKS_PER_SEC;
+
+    tmp = malloc( n * sizeof(double));
+
+    int result = lss_75_05(n, A, B, X, tmp);
+
+    clock_t end = clock();
+    double time_spent = (double) (end - begin) / CLOCKS_PER_SEC;
     if (flag_time) {
         printf("\nExecution time: %1.9lf\n", time_spent);
     }
 
-    write_answer(output_file,n, X, result);
+    write_answer(output_file, n, X, result);
     if (flag_print_matrix) {
         print_system(n, A, B);
     }
